@@ -178,6 +178,44 @@
   }
   .btn-outline:hover { color: var(--accent); border-color: var(--accent); }
 
+  /* ── CIRCULATION FINDING ── */
+  .finding {
+    background: var(--card-bg);
+    padding: 5.5rem 4rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    text-align: center;
+  }
+  .finding-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .finding-h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+    font-weight: 300;
+    line-height: 1.35;
+    margin-bottom: 1.5rem;
+  }
+  .finding-body {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.85;
+    margin-bottom: 2.8rem;
+  }
+  .finding-img {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    margin-bottom: 1.8rem;
+  }
+  .finding-note {
+    font-size: 0.85rem;
+    color: var(--light-muted);
+    line-height: 1.7;
+  }
+
   /* ── TRUST BAR ── */
   .trust-bar {
     background: var(--ink);
@@ -925,6 +963,7 @@
     footer { padding: 2.5rem 2rem; }
     .credentials { padding: 3.5rem 2rem; gap: 2.5rem; }
     .sample-review { padding: 4.5rem 2rem; }
+    .finding { padding: 4.5rem 2rem; }
   }
   @media (max-width: 900px) {
     nav { padding: 1rem 1.25rem; }
@@ -956,6 +995,7 @@
     .credentials-body { grid-template-columns: 1fr; gap: 1.5rem; }
     .cred-num { font-size: 2.2rem; }
     .sample-review { padding: 4rem 1.25rem; }
+    .finding { padding: 4rem 1.25rem; }
     .sample-grid { grid-template-columns: 1fr; }
     .sample-card { aspect-ratio: 16 / 9; }
     .download { padding: 4rem 1.25rem; }
@@ -966,7 +1006,7 @@
     .download-form { flex-direction: column; }
   }
   @media (max-width: 480px) {
-    .hero { padding: 6rem 1rem 4rem; }
+    .hero { padding: 4.5rem 1rem 1.5rem; }
     section { padding: 4rem 1rem; }
     .trust-bar { gap: 1.2rem; padding: 1.2rem 1rem; }
     .trust-text { font-size: 0.65rem; letter-spacing: 0.08em; }
@@ -976,6 +1016,7 @@
     .audience-card { padding: 2rem 1.4rem; }
     .credentials { padding: 2.5rem 1rem; }
     .sample-review { padding: 3.5rem 1rem; }
+    .finding { padding: 3.5rem 1rem; }
     .sample-card { padding: 1.5rem; }
     .download { padding: 3.5rem 1rem; }
     .download-preview-card { padding: 2rem 1.5rem; }
@@ -999,15 +1040,25 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-tag">Available Australia-Wide</div>
-  <h1>The quality control step<br>most plans <em>never get.</em></h1>
-  <p class="hero-sub">Upload your residential floor plan. Get a 15-minute Loom video from a design manager with 15+ years of custom home experience, reviewing your plan the same way it would be checked inside a high-end building firm. Flat fee. 48-hour turnaround. Anywhere in Australia.</p>
+  <h1>About to sign?<br>Get your plans <em>checked first.</em></h1>
+  <p class="hero-sub">Upload your floor plan. Get a 15-minute video walkthrough from a designer who has drawn 800+ homes. Flat fee, 48-hour turnaround, anywhere in Australia.</p>
   <div class="hero-price">
-    <span class="hero-price-amount"><sup>$</sup>395</span>
-    <span class="hero-price-detail">per review<br>AUD + GST</span>
+    <span class="hero-price-amount"><sup>$</sup>440</span>
+    <span class="hero-price-detail">per review<br>AUD, GST included</span>
   </div>
   <div class="hero-actions">
     <a href="#cta" class="btn-accent">Submit Your Plan</a>
     <a href="#how" class="btn-outline">See How It Works</a>
+  </div>
+</section>
+
+<!-- CIRCULATION FINDING -->
+<section class="finding" id="finding">
+  <div class="finding-inner">
+    <h2 class="finding-h2">A recent review found 20m² of space the owners were paying for and only walking through.</h2>
+    <p class="finding-body">Circulation isn't free. At typical custom build rates that's around $50,000 — spent on hallway, in a plan already at contract stage.</p>
+    <img class="finding-img" src="circulation-example.png" alt="Floor plan showing 20 square metres of excess circulation space highlighted">
+    <p class="finding-note">It's the most expensive thing plans get wrong, and the hardest to see when you're looking at your own.</p>
   </div>
 </section>
 
@@ -1148,8 +1199,8 @@
     <!-- Standard -->
     <div class="price-card fade-up">
       <div class="price-label">Standard Review</div>
-      <div class="price-amount"><sup>$</sup>395</div>
-      <div class="price-period">AUD + GST per review</div>
+      <div class="price-amount"><sup>$</sup>440</div>
+      <div class="price-period">AUD, GST included, per review</div>
       <div class="price-divider"></div>
       <ul class="price-features">
         <li>15-minute Loom video walkthrough</li>
@@ -1164,8 +1215,8 @@
     <!-- Priority -->
     <div class="price-card featured fade-up">
       <div class="price-label">Priority Review</div>
-      <div class="price-amount"><sup>$</sup>595</div>
-      <div class="price-period">AUD + GST per review</div>
+      <div class="price-amount"><sup>$</sup>660</div>
+      <div class="price-period">AUD, GST included, per review</div>
       <div class="price-divider"></div>
       <ul class="price-features">
         <li>Everything in the Standard Review</li>
@@ -1230,7 +1281,7 @@
     <div class="audience-card fade-up">
       <span class="audience-icon">◯</span>
       <div class="audience-title">Home Buyers and Renovators</div>
-      <div class="audience-desc">You're about to sign off on plans for a new build or major renovation. Before you commit hundreds of thousands of dollars to construction, a $395 review could save you tens of thousands in mid-build changes — or simply confirm your plans are right. If you're still choosing a builder, we can also point you in the right direction.</div>
+      <div class="audience-desc">You're about to sign off on plans for a new build or major renovation. Before you commit hundreds of thousands of dollars to construction, a $440 review could save you tens of thousands in mid-build changes — or simply confirm your plans are right. If you're still choosing a builder, we can also point you in the right direction.</div>
     </div>
   </div>
 </section>
