@@ -77,6 +77,12 @@
     line-height: 1.8;
     margin-bottom: 2.5rem;
   }
+  .message a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .message a:hover { color: #fff; }
   .divider {
     width: 60px;
     height: 2px;
@@ -130,7 +136,7 @@
 
   <h1>Payment <em>received.</em></h1>
 
-  <p class="message">Send your floor plan to hello@planreview.com.au — PDF or image, any scale. I'll reply with a 15-minute video walkthrough within 48 hours of receiving it.</p>
+  <p class="message">Send your floor plan to <a href="mailto:hello@planreview.com.au?subject=Plan%20Review%20Submission">hello@planreview.com.au</a> — PDF or image, any scale. I'll reply with a 15-minute video walkthrough within 48 hours of receiving it.</p>
 
   <div class="divider"></div>
 
