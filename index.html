@@ -131,8 +131,16 @@
     color: var(--muted);
     max-width: 520px;
     line-height: 1.85;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.1rem;
   }
+  .hero-proof {
+    font-size: 0.95rem;
+    color: var(--accent);
+    max-width: 480px;
+    line-height: 1.55;
+    margin-bottom: 2.2rem;
+  }
+  .hero-proof strong { font-weight: 600; }
   .hero-price {
     display: flex;
     align-items: baseline;
@@ -1016,7 +1024,8 @@
     .download-form { flex-direction: column; }
   }
   @media (max-width: 480px) {
-    .hero { padding: 4.5rem 1rem 1.5rem; }
+    .hero { padding: 3rem 1rem 1.25rem; }
+    .hero-proof { font-size: 0.88rem; max-width: 100%; }
     section { padding: 4rem 1rem; }
     .trust-bar { gap: 1.2rem; padding: 1.2rem 1rem; }
     .trust-text { font-size: 0.65rem; letter-spacing: 0.08em; }
@@ -1052,6 +1061,7 @@
   <div class="hero-tag">Available Australia-Wide</div>
   <h1>About to sign?<br>Get your plans <em>checked first.</em></h1>
   <p class="hero-sub">Upload your floor plan. Get a 15-minute video walkthrough from a designer who has drawn 800+ homes. Flat fee, 48-hour turnaround, anywhere in Australia.</p>
+  <p class="hero-proof">A recent review found <strong>20m²</strong> of space the owners were paying for and only walking through — around <strong>$50,000</strong> of hallway.</p>
   <div class="hero-price">
     <span class="hero-price-amount"><sup>$</sup>440</span>
     <span class="hero-price-detail">per review<br>AUD, GST included</span>
