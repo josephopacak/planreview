@@ -97,6 +97,14 @@
     letter-spacing:.06em; text-transform:uppercase; background:var(--accent); color:#fff;
     border-radius:10px; text-decoration:none}
 
+  /* Paid review offer */
+  .offer{border:1px solid var(--line); border-radius:16px; padding:22px 20px; margin:6px 0 18px; text-align:center; background:var(--card)}
+  .offer h3{font-family:'Cormorant Garamond',serif; font-weight:500; font-size:1.6rem; line-height:1.15; margin-bottom:8px}
+  .offer p{font-size:15.5px; color:var(--muted); margin-bottom:12px}
+  .offer .facts{font-size:13.5px; color:var(--ink); margin-bottom:16px; line-height:1.7}
+  .offer a{display:block; padding:15px 18px; font-size:15px; font-weight:600; letter-spacing:.06em;
+    text-transform:uppercase; background:var(--ink); color:#fff; border-radius:10px; text-decoration:none}
+
   footer{text-align:center; padding:30px 0 34px; font-size:12.5px; color:var(--muted);
     border-top:1px solid var(--line); margin-top:30px}
 </style>
@@ -120,6 +128,13 @@
     </div>
     <div class="msg" id="msg"></div>
     <p class="note">Free PDF · No spam — just the checklist and the occasional design tip.</p>
+  </div>
+
+  <div class="offer">
+    <h3>Already signed with a builder?</h3>
+    <p>Skip the checklist. Send me your plan and I'll record a 15-minute video walking you through every problem I find, before it's built.</p>
+    <div class="facts">800+ homes designed · Results in 3 business days (1-day Priority available) · Australia-wide, all online</div>
+    <a href="https://buy.stripe.com/00w3cvde0g5O7r93c69bO03" id="offerlink">Get my plan reviewed — $440</a>
   </div>
 
   <div class="inside">
@@ -181,6 +196,9 @@
     e.preventDefault();
     document.getElementById('email').scrollIntoView({behavior:'smooth', block:'center'});
     setTimeout(function(){ document.getElementById('email').focus(); }, 400);
+  });
+  document.getElementById('offerlink').addEventListener('click', function(){
+    try{ gtag('event','begin_checkout',{event_category:'review',event_label:'checklist_page'}); }catch(e){}
   });
 </script>
 </body>
