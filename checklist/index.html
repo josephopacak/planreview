@@ -100,6 +100,16 @@
     letter-spacing:.06em; text-transform:uppercase; background:var(--accent); color:#fff;
     border-radius:10px; text-decoration:none}
 
+  /* Google reviews */
+  .reviews{display:flex; flex-direction:column; gap:12px; margin:4px 0 22px}
+  .reviews-tag{text-align:center; font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--accent); font-weight:600}
+  .review{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 18px 16px}
+  .review .stars{color:#e0a100; font-size:15px; letter-spacing:2px; margin-bottom:8px}
+  .review p{font-size:15.5px; color:var(--ink); margin-bottom:10px}
+  .review .who{font-size:13px; color:var(--muted)}
+  .review .who b{color:var(--ink); font-weight:500}
+
   /* Paid review offer */
   .offer{border:1px solid var(--line); border-radius:16px; padding:22px 20px; margin:6px 0 18px; text-align:center; background:var(--card)}
   .offer h3{font-family:'Cormorant Garamond',serif; font-weight:500; font-size:1.6rem; line-height:1.15; margin-bottom:8px}
@@ -133,6 +143,20 @@
     </div>
     <div class="msg" id="msg"></div>
     <p class="note">Free PDF · No spam — just the checklist and the occasional design tip.</p>
+  </div>
+
+  <div class="reviews">
+    <div class="reviews-tag">What clients say</div>
+    <div class="review">
+      <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <p>"Joe was so helpful. He offered constructive advice in a timely manner. His service exceeded our experience with a similar company by a long way. Highly recommend Joe if you are looking for review of your floor plan."</p>
+      <div class="who"><b>Hannah Sinagra</b> · Google review</div>
+    </div>
+    <div class="review">
+      <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <p>"I used Plan Review and found the feedback to be concise and useful. Rather than overwhelming me with unnecessary detail, it focused on the key issues that mattered most… It gave me greater confidence in my existing plans while identifying a few worthwhile improvements. Overall, I felt it was good value and a worthwhile second opinion."</p>
+      <div class="who"><b>Nicole Lewis</b> · Google review</div>
+    </div>
   </div>
 
   <div class="offer">
