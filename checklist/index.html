@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW4X95ZGZD"></script>
 <script>
@@ -33,7 +34,6 @@ document.addEventListener('click', function(e){
 src="https://www.facebook.com/tr?id=1820922209193197&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Floor Plan Checklist — Plan Review</title>
 <meta name="description" content="Your plans probably have mistakes nobody has pointed out. Get the free checklist from a designer of 800+ homes and find them before they're built.">
@@ -63,7 +63,7 @@ src="https://www.facebook.com/tr?id=1820922209193197&ev=PageView&noscript=1"
   .brand span{color:var(--accent)}
 
   /* Hero */
-  .hero{text-align:center; padding:18px 0 10px}
+  .hero{text-align:center; padding:12px 0 8px}
   .eyebrow{display:inline-block; font-size:12px; letter-spacing:.18em; text-transform:uppercase;
     color:var(--accent); font-weight:600; margin-bottom:16px}
   h1{font-family:'Cormorant Garamond',serif; font-weight:500;
@@ -123,6 +123,19 @@ src="https://www.facebook.com/tr?id=1820922209193197&ev=PageView&noscript=1"
     letter-spacing:.06em; text-transform:uppercase; background:var(--accent); color:#fff;
     border-radius:10px; text-decoration:none}
 
+  /* Checklist preview */
+  .preview{display:block; width:100%; max-width:190px; height:auto; margin:0 auto -10px}
+
+  /* Inside grid */
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px}
+  .grid span{display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.06);
+    border-radius:10px; padding:10px 10px; font-size:14px; color:#efe9e0; line-height:1.25}
+  .grid i{font-style:normal; font-weight:600; color:var(--accent); font-size:13px; min-width:16px}
+
+  /* Review sample in offer */
+  .sample{display:block; width:100%; height:auto; border-radius:10px; border:1px solid var(--line); margin:0 0 14px}
+  .sample-cap{font-size:12.5px; color:var(--muted); margin:-6px 0 14px}
+
   /* Google reviews */
   .reviews{display:flex; flex-direction:column; gap:12px; margin:4px 0 22px}
   .reviews-tag{text-align:center; font-size:12px; letter-spacing:.18em; text-transform:uppercase;
@@ -154,12 +167,14 @@ src="https://www.facebook.com/tr?id=1820922209193197&ev=PageView&noscript=1"
   <div class="hero">
     <span class="eyebrow">Free checklist</span>
     <h1>Your plans probably have mistakes <em>nobody has pointed out.</em></h1>
-    <p class="sub">They're <b>cheap to fix on paper</b> and expensive once they're built. Find them before you sign off.</p>
+    <p class="sub"><b>Cheap to fix on paper.</b> Expensive once built.</p>
     <span class="proof"><b>800+ homes designed</b> · 15 years in custom design</span>
   </div>
 
+  <img class="preview" src="/checklist/checklist-preview.png" width="692" height="670" alt="The Pre-Construction Plan Review Checklist: cover and an inside page">
+
   <div class="form-card">
-    <label for="email">Get the free checklist I use on every plan I review:</label>
+    <label for="email">The 10 things I check on every plan. Free:</label>
     <div class="field">
       <input type="email" id="email" placeholder="you@email.com" autocomplete="email" required>
       <button id="btn">Send me the free checklist</button>
@@ -172,43 +187,41 @@ src="https://www.facebook.com/tr?id=1820922209193197&ev=PageView&noscript=1"
     <div class="reviews-tag">What clients say</div>
     <div class="review">
       <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-      <p>"Joe was so helpful. He offered constructive advice in a timely manner. His service exceeded our experience with a similar company by a long way. Highly recommend Joe if you are looking for review of your floor plan."</p>
+      <p>"…His service exceeded our experience with a similar company by a long way."</p>
       <div class="who"><b>Hannah Sinagra</b> · Google review</div>
     </div>
     <div class="review">
       <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-      <p>"I used Plan Review and found the feedback to be concise and useful. Rather than overwhelming me with unnecessary detail, it focused on the key issues that mattered most… It gave me greater confidence in my existing plans while identifying a few worthwhile improvements. Overall, I felt it was good value and a worthwhile second opinion."</p>
+      <p>"…It gave me greater confidence in my existing plans while identifying a few worthwhile improvements."</p>
       <div class="who"><b>Nicole Lewis</b> · Google review</div>
     </div>
   </div>
 
   <div class="offer">
     <h3>Working with a builder?</h3>
-    <p>Skip the checklist. Send me your plan and I'll record a 15-minute video walking you through every problem I find, before it's built.</p>
-    <div class="facts">800+ homes designed · Results in 3 business days (1-day Priority available) · Australia-wide, all online</div>
+    <p>Skip the checklist. I'll mark up your plan and walk you through it.</p>
+    <img class="sample" src="/checklist/review-sample.jpg" width="881" height="900" loading="lazy" alt="A real floor plan marked up in red with review notes">
+    <div class="sample-cap">A real plan after review</div>
+    <div class="facts">15-minute video · Back in 3 business days · Australia-wide</div>
     <a class="main" href="https://buy.stripe.com/00w3cvde0g5O7r93c69bO03" id="offerlink">Get my plan reviewed — $440</a>
     <a class="priority" href="https://buy.stripe.com/3cIeVd4HuaLu26P5ke9bO02" id="prioritylink">Need it faster? 1-day Priority — $660</a>
   </div>
 
   <div class="inside">
-    <div class="inside-tag">What's inside</div>
-    <h2>Pre-Construction Plan Review Checklist</h2>
-    <div class="inside-meta">12 pages · Free PDF</div>
-    <ul>
-      <li>Floor plan layout and flow</li>
-      <li>Room proportions and furniture fit</li>
-      <li>Natural light and orientation</li>
-      <li>Kitchen, laundry and bathroom</li>
-      <li>Indoor-outdoor connection</li>
-      <li>Storage and practical spaces</li>
-      <li>Street presence and elevation</li>
-      <li>Electrical and lighting</li>
-      <li>Site plan and block considerations</li>
-      <li>Your score and next steps</li>
-    </ul>
+    <div class="inside-tag">What's inside · 12-page PDF</div>
+    <div class="grid">
+      <span><i>1</i>Layout &amp; flow</span>
+      <span><i>2</i>Furniture fit</span>
+      <span><i>3</i>Light &amp; orientation</span>
+      <span><i>4</i>Kitchen, laundry, bath</span>
+      <span><i>5</i>Indoor-outdoor</span>
+      <span><i>6</i>Storage</span>
+      <span><i>7</i>Street &amp; elevation</span>
+      <span><i>8</i>Electrical &amp; lighting</span>
+      <span><i>9</i>Site &amp; block</span>
+      <span><i>10</i>Your score</span>
+    </div>
   </div>
-
-  <p class="cred">Written by a residential designer with <b>15+ years and 800+ homes</b> of experience — the same eye behind our paid plan reviews, distilled into a checklist you can run yourself.</p>
 
   <div class="cta2">
     <a href="#email" id="cta2link">Get the free checklist</a>
