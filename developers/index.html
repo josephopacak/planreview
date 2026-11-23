@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YW4X95ZGZD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YW4X95ZGZD');
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1820922209193197');
+fbq('track', 'PageView');
+// Any click on a Stripe checkout link counts as InitiateCheckout
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[href*="buy.stripe.com"]');
+  if(!a) return;
+  var priority = a.href.indexOf('3cIeVd4HuaLu26P5ke9bO02') !== -1;
+  try{ fbq('track','InitiateCheckout',{value: priority ? 660 : 440, currency:'AUD'}); }catch(err){}
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1820922209193197&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Review for Developers — Plan Review</title>
+<meta name="description" content="Build costs are up. Independent design review for developers and small builders: find what is costing you to build and at sale, before you lock in the design.">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1814; --paper:#faf8f4; --accent:#d44a26;
+    --muted:#6f685f; --line:#e6e1d8; --card:#ffffff;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'DM Sans',sans-serif; font-weight:300;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+    padding:0 20px;
+  }
+  .wrap{max-width:600px; margin:0 auto}
+  a{color:inherit}
+
+  .brand{text-align:center; padding:28px 0 8px; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; font-size:14px}
+  .brand a{text-decoration:none}
+  .brand span{color:var(--accent)}
+
+  .hero{text-align:center; padding:14px 0 6px}
+  .eyebrow{display:inline-block; font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--accent); font-weight:600; margin-bottom:16px}
+  h1{font-family:'Cormorant Garamond',serif; font-weight:500;
+    font-size:clamp(2.1rem,8vw,3.1rem); line-height:1.06; letter-spacing:-.01em; margin-bottom:18px}
+  h1 em{font-style:italic; color:var(--accent)}
+  .sub{font-size:17px; color:var(--muted); max-width:500px; margin:0 auto}
+  .proof{display:block; margin-top:16px; font-size:13px; font-weight:500; letter-spacing:.04em}
+  .proof b{color:var(--accent); font-weight:600}
+
+  .btn{display:block; padding:16px 18px; font-size:15px; font-weight:600; letter-spacing:.06em;
+    text-transform:uppercase; background:var(--accent); color:#fff; border-radius:10px;
+    text-decoration:none; text-align:center; transition:opacity .15s}
+  .btn:hover{opacity:.93}
+  .btn.dark{background:var(--ink)}
+  .hero .btn{max-width:360px; margin:26px auto 0}
+  .btn-note{text-align:center; font-size:13px; color:var(--muted); margin-top:10px}
+
+  section{margin:34px 0}
+  .tag{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);
+    font-weight:600; margin-bottom:8px}
+  h2{font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(1.7rem,6vw,2.1rem);
+    line-height:1.12; margin-bottom:12px}
+  p{font-size:16px; margin-bottom:12px}
+  p.muted{color:var(--muted)}
+
+  /* Cost vs return */
+  .split{display:grid; grid-template-columns:1fr; gap:12px; margin-top:16px}
+  @media(min-width:560px){.split{grid-template-columns:1fr 1fr}}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px 18px}
+  .card h3{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1.35rem; margin-bottom:8px}
+  .card h3 span{color:var(--accent)}
+  .card ul{list-style:none}
+  .card li{position:relative; padding:6px 0 6px 18px; font-size:15px; color:var(--ink)}
+  .card li::before{content:''; position:absolute; left:0; top:15px; width:7px; height:7px;
+    border-radius:50%; background:var(--accent)}
+  .callout{margin-top:14px; font-size:16px; font-weight:500; text-align:center}
+  .callout em{font-family:'Cormorant Garamond',serif; font-size:1.25rem; color:var(--accent)}
+
+  /* What you get (dark) */
+  .dark-box{background:var(--ink); color:var(--paper); border-radius:16px; padding:28px 24px}
+  .dark-box h2{color:var(--paper)}
+  .dark-box ul{list-style:none}
+  .dark-box li{position:relative; padding:10px 0 10px 30px; font-size:15.5px; color:#efe9e0;
+    border-bottom:1px solid rgba(255,255,255,.08)}
+  .dark-box li:last-child{border-bottom:none}
+  .dark-box li::before{content:''; position:absolute; left:0; top:15px; width:16px; height:16px;
+    border-radius:50%; background:var(--accent);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    background-size:10px; background-repeat:no-repeat; background-position:center}
+  .sample{display:block; width:100%; height:auto; border-radius:10px; border:1px solid var(--line); margin:18px 0 6px}
+  .sample-cap{font-size:12.5px; color:var(--muted)}
+  .dark-box li b{color:#fff; font-weight:500}
+
+  /* Steps */
+  .steps{counter-reset:s; list-style:none}
+  .steps li{counter-increment:s; position:relative; padding:12px 0 12px 46px; border-bottom:1px solid var(--line); font-size:15.5px}
+  .steps li:last-child{border-bottom:none}
+  .steps li::before{content:counter(s); position:absolute; left:0; top:10px; width:30px; height:30px;
+    border-radius:50%; border:1px solid var(--accent); color:var(--accent); font-weight:600;
+    font-size:14px; display:flex; align-items:center; justify-content:center}
+  .steps b{font-weight:500}
+
+  .scope{border-left:3px solid var(--accent); padding:4px 0 4px 16px}
+  .scope p{font-size:15px; color:var(--muted); margin-bottom:6px}
+
+  .repeat{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px 20px; text-align:center}
+  .repeat p{color:var(--muted)}
+  .repeat .btn{margin-top:14px}
+
+  .faq details{border-bottom:1px solid var(--line); padding:14px 0}
+  .faq summary{cursor:pointer; font-weight:500; font-size:16px; list-style:none; position:relative; padding-right:26px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:'+'; position:absolute; right:0; top:-2px; color:var(--accent); font-size:22px; font-weight:400}
+  .faq details[open] summary::after{content:'–'}
+  .faq details p{margin:10px 0 0; font-size:15px; color:var(--muted)}
+
+  .final{text-align:center}
+  .final .btn{max-width:360px; margin:18px auto 0}
+
+  footer{text-align:center; padding:30px 0 34px; font-size:12.5px; color:var(--muted);
+    border-top:1px solid var(--line); margin-top:30px}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand"><a href="/">Plan <span>Review</span></a></div>
+
+  <div class="hero">
+    <span class="eyebrow">For developers &amp; small builders</span>
+    <h1>Build costs are up. <em>Your design is where you get margin back.</em></h1>
+    <p class="sub">A second set of eyes on your plans from a designer of 800+ homes.</p>
+    <a class="btn js-lead" data-label="hero" href="mailto:hello@planreview.com.au?subject=Developer%20plan%20review&body=Project%20location%3A%0D%0ANumber%20of%20dwellings%3A%0D%0AWhat%20you're%20trying%20to%20achieve%3A%0D%0A%0D%0APlease%20attach%20your%20plans%20(PDF%20is%20fine).">Send me your plan</a>
+    <p class="btn-note">Video walkthrough in 3 business days · Australia-wide</p>
+  </div>
+
+  <section class="dark-box">
+    <div class="tag">What I help with</div>
+    <ul>
+      <li><b>Simpler to build.</b> Less complexity in the design and construction.</li>
+      <li><b>Elevations with wow factor.</b> Ideas that lift a boring facade.</li>
+      <li><b>What buyers want now.</b> The features in demand today.</li>
+      <li><b>Space that works harder.</b> Every square metre earning its place.</li>
+      <li><b>Natural light.</b> Brighter homes that feel bigger.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="tag">How it works</div>
+    <ol class="steps">
+      <li><b>Send your plans</b> and what you're trying to achieve.</li>
+      <li><b>I review them</b> and record a video walkthrough, marked up as I go.</li>
+      <li><b>You get specific changes</b> to hand to your drafter.</li>
+    </ol>
+    <img class="sample" src="/checklist/review-sample.jpg" width="881" height="900" loading="lazy" alt="A real floor plan marked up in red with review notes">
+    <div class="sample-cap">A real plan after review</div>
+  </section>
+
+  <section class="repeat">
+    <h2>More than one project a year?</h2>
+    <p>Ask about a project rate.</p>
+    <a class="btn dark js-lead" data-label="project_rate" href="mailto:hello@planreview.com.au?subject=Project%20rate%20enquiry">Talk about a project rate</a>
+  </section>
+
+  <section class="faq">
+    <details>
+      <summary>Do you redraw the plans?</summary>
+      <p>No. I show you and your drafter exactly what to change.</p>
+    </details>
+    <details>
+      <summary>Do you check planning compliance?</summary>
+      <p>No. This is a design review. Your planner or certifier handles compliance.</p>
+    </details>
+  </section>
+
+  <section class="final">
+    <h2>Got a plan on your desk?</h2>
+    <a class="btn js-lead" data-label="footer" href="mailto:hello@planreview.com.au?subject=Developer%20plan%20review&body=Project%20location%3A%0D%0ANumber%20of%20dwellings%3A%0D%0AWhat%20you're%20trying%20to%20achieve%3A%0D%0A%0D%0APlease%20attach%20your%20plans%20(PDF%20is%20fine).">Send me your plan</a>
+  </section>
+
+  <footer>© 2026 Plan Review · Perth, WA · Australia-wide · <a href="mailto:hello@planreview.com.au">hello@planreview.com.au</a></footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.js-lead').forEach(function(a){
+    a.addEventListener('click', function(){
+      try{ gtag('event','generate_lead',{event_category:'developer',event_label:a.getAttribute('data-label')}); }catch(e){}
+      try{ fbq('track','Lead',{content_category:'developer'}); }catch(e){}
+    });
+  });
+</script>
+</body>
+</html>
